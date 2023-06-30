@@ -1,0 +1,439 @@
+/* Google Fonts */
+  @import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Oswald:wght@400;500;600;700&display=swap');
+
+/* Variables CSS */
+
+:root {
+  --header-height: 3rem;
+
+  /* Font Weight */
+  --font-regular:400;
+  --font-medium: 500;
+  --font-semi-bold: 600;
+  --font-bold: 700;
+
+
+  /* Colors */
+  --white-color: #FFF;
+  
+
+  /* Font and Typography */
+  /* .5rem = 8px | 1rem = 16px */
+  --body-font: 'Oswald', sans-serif; 
+  --logo-font: 'Berkshire Swash', cursive;
+  --big-font-size: 1.25rem;
+  --bigger-font-size: 1.5rem;
+  --biggest-font-size: 2rem;
+  --h2-font-size: 1.25rem;
+  --normal-font-size: 0.938rem;
+  --smaller-font-size: 0.813rem;
+
+  /*Margins*/
+  /* Margin Bottom */
+  /* .5rem = 8px  | 1 rem = 16px  */
+  --mb-1: 0.5rem;
+  --mb-2: 1rem;
+  --mb-3: 1.5rem;
+  --mb-4: 2rem;
+  --mb-5: 2.5rem;
+  --mb-6: 3rem;
+
+
+  /* z index */
+  /* --z-tooltip: 10; */
+  --z-fixed: 100;
+}
+
+@media screen and (min-width:768px) {
+  :root {
+    --big-font-size: 1.5rem;
+    --bigger-font-size: 2rem;
+    --biggest-font-size: 3rem;
+    --normal-font-size: 1rem;
+    --smaller-font-size: 0.875rem;
+  }
+}
+
+/* Base  */
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+body {
+  margin: var(--header-height) 0 0 0;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  font-weight: var(--font-medium);
+  color: var(--dark-color);
+  line-height: 1.6;
+
+}
+
+h1,
+h2,
+h3,
+p,
+ul {
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--dark-color);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+
+/* Class CSS */
+
+/* Layout */
+.bd-grid {
+  max-width: 1024px;
+  display: grid;
+  grid-template-columns: 100%;
+  column-gap: 2rem;
+  width: calc(100% - 2rem);
+  margin: auto;
+}
+
+.l-header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--z-fixed);
+  height: 12vh;
+  background-color: #8A8A8A;
+  padding: 0px 5px 0 5px;
+}
+
+
+/*===== NAV =====*/
+.nav {
+  /* height: var(--header-height); */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.nav__link{
+    font-size: 28px;
+}
+
+.nav__item {
+  margin-bottom: var(--mb-4);
+}
+
+.nav__logo {
+  font-weight: var(--font-bold);
+  font-size:20px;
+  color: #000;
+  font-family: var(--logo-font);
+  /* letter-spacing: .01rem; */
+}
+
+.logospan{
+    font-size: 18px;
+    color: chocolate;
+    font-weight: 500;
+    font-family: var(--body-font);
+}
+
+.nav__toggle,
+.nav__shop {
+  font-size: 3rem;
+  cursor: pointer;
+}
+
+/*Show menu*/
+.show {
+  left: 0;
+}
+
+/* Active link */
+.active {
+  position: relative;
+}
+
+/*Change color header*/
+.scroll-header {
+  background-color: var(--white-color);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
+  /* color: #FFF; */
+}
+
+/* Sections */
+
+.bghome{
+    background-image: url(./assets/patina\ leather\ on\ feet.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    text-align:justify;
+    padding: 200px 0 0px 50px;
+}
+
+.intro{
+  font-size: 50px;
+  font-weight: 600;
+  color: rgb(46, 8, 46);
+  font-family: var(--body-font);
+}
+
+.introp{
+  font-size: 20px;
+  color: black;
+  font-weight: 500;
+  font-family: var(--logo-font);
+}
+
+.shopnow{
+font-size: 20px;
+font-weight: 500;
+font-family: var(--logo-font);
+background-color: rgb(46, 8, 46);
+width: 150px;
+height: 55px;
+border: none;
+border-radius: 10px;
+color: #FFF;
+}
+
+.shopnow:hover{
+  background-color: rgb(99, 42, 1);
+}
+
+
+/* Loafer advert */
+.musthave{
+  text-align: center;
+  font-size: 40px;
+  padding-bottom: 20px;
+}
+
+.loafers{
+  background-color: #d4d4d4;
+  width: 100%;
+  height: 100%;
+  padding-top: 3rem;
+  padding-bottom: 2rem;
+}
+
+.loafers__container{
+  gap: 2rem;
+  justify-content: space-evenly;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 95%;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+
+}
+
+.loafer__img{
+  width: 230px;
+  position: absolute;
+  border-radius: 10px;
+}
+
+.loafer__img1{
+  width: 230px;
+  position: absolute;
+  border-radius: 10px;
+}
+
+.loafers-card{
+  display: flex;
+  height: 480px;
+  justify-content: space-evenly;
+  width: 300px;
+  background-color: beige;
+  padding: 1rem;
+  border-radius: .5rem;
+}
+
+.loafers__data{
+  align-self: flex-end;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  line-height: 1.5rem;
+  z-index: 99;
+}
+
+.loafers__description{
+  font-size: 18px;
+  font-weight: 400;
+}
+.loafers__name{
+  font-size: 20px;
+}
+
+.loafers-btn{
+  /* margin-bottom: 10px; */
+  width: 120px;
+  height: 45px;
+  border: none;
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  background-color: rgb(46, 8, 46);
+  border-radius: 5px;
+}
+
+/* Patina Shoes */
+.patina-oxfords-card{
+  display: flex;
+  height: 400px;
+  justify-content: space-evenly;
+  width: 300px;
+  background-color: beige;
+  padding: 1rem;
+  border-radius: .5rem;
+}
+
+/* Footer */
+
+.footer__con{
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+
+  .l-footer{
+    padding-top: 2rem;
+  }
+
+  .footer__title{
+    font-size: 25px;
+    font-weight: 500;
+  }
+
+  .footer__box{
+    margin-bottom: var(--mb-4);
+  }
+
+  .footer__items{
+    display: block;
+    width: max-content;
+    margin-bottom: var(--mb-1);
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  .footer__social{
+    font-size: 3rem;
+    color: green;
+    margin-right: 1.5rem;
+  }
+
+  .nav__logos{
+
+  }
+/* Media Querry */
+
+@media screen and (min-width: 1024px) {
+    .bd-grid{
+      margin-right: auto;
+      margin-left: auto;
+    }
+}
+
+
+@media screen and (min-width: 768px) {
+    body{
+      margin: 0;
+    }
+
+    .l-header {
+      padding: 0px 20px 0 35px;
+
+    }
+        
+    .nav{
+        height: calc(var(--header-height)+1.5rem);
+      }
+    
+      .nav__menu{
+        margin-left: auto;
+      }
+    
+      .nav__list{
+        display: flex;
+        list-style: none;
+      }
+    
+      .nav__item{
+        margin-left: var(--mb-6);
+        margin-bottom: 0;
+      }
+    
+      .nav__toggle{
+        display: none;
+      }
+    
+
+      .nav__logo {
+        font-weight: var(--font-bold);
+        font-size: 40px;
+        color: #000;
+        font-family: var(--logo-font);
+        letter-spacing: .5rem;
+      }
+      
+      .logospan{
+          font-size: 28px;
+          color: chocolate;
+          font-family: var(--body-font);
+      }
+}  
+
+@media screen and (max-width: 768px) {
+  .nav__menu {
+    position: fixed;
+    top: 4.5rem;
+    right: 100%;
+    width: 70%;
+    height: 50vh;
+    padding: 2rem;
+    background-color: var(--white-color);
+    transition: .4s;
+  }
+
+  .intro{
+    font-size: 20px;
+    font-weight: 500;
+    color: #000;
+    font-family: var(--body-font);
+  }
+  
+  .introp{
+    font-size: 14px;
+    color: #fff;
+    font-weight: 400;
+    font-family: var(--logo-font);
+  }
+
+}
+
+
