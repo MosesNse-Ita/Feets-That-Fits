@@ -1,16 +1,16 @@
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyBq5XdZjh58ct5cdR2O6-eaANdMZPSPVow",
-    authDomain: "new-auth-193c0.firebaseapp.com",
-    projectId: "new-auth-193c0",
-    storageBucket: "new-auth-193c0.appspot.com",
-    messagingSenderId: "553523485082",
-    appId: "1:553523485082:web:e0f7f525d8782546978223"
-  };
+  apiKey: "AIzaSyAUmYtAUsfOZG3XbCwGUBeEC7go5eWRdFQ",
+  authDomain: "feets-authentication.firebaseapp.com",
+  projectId: "feets-authentication",
+  storageBucket: "feets-authentication.appspot.com",
+  messagingSenderId: "589241135130",
+  appId: "1:589241135130:web:6070c28a0b18ac399761a3"
+};
 
-  //Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  const auth = firebase.auth();
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+const auth = firebase.auth();
 
   auth.onAuthStateChanged(function (user){
     if (user){
@@ -26,3 +26,14 @@ const firebaseConfig = {
         window.location = "index.html";
     }
   });
+
+  //logout function
+
+  let signOutButton = document.getElementById("signout");
+  signOutButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    console.log("logout clicked");
+    auth.signOut();
+    alert("Signed out");
+    window.location = "./main.html";
+  })

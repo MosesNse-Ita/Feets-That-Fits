@@ -1,17 +1,18 @@
   // Your web app's Firebase configuration
   const firebaseConfig = {
-    apiKey: "AIzaSyBq5XdZjh58ct5cdR2O6-eaANdMZPSPVow",
-    authDomain: "new-auth-193c0.firebaseapp.com",
-    projectId: "new-auth-193c0",
-    storageBucket: "new-auth-193c0.appspot.com",
-    messagingSenderId: "553523485082",
-    appId: "1:553523485082:web:e0f7f525d8782546978223"
+    apiKey: "AIzaSyAUmYtAUsfOZG3XbCwGUBeEC7go5eWRdFQ",
+    authDomain: "feets-authentication.firebaseapp.com",
+    projectId: "feets-authentication",
+    storageBucket: "feets-authentication.appspot.com",
+    messagingSenderId: "589241135130",
+    appId: "1:589241135130:web:6070c28a0b18ac399761a3"
   };
 
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
   const auth = firebase.auth();
 
+ 
 //signup function
 let signUpButton = document.getElementById("signup");
 signUpButton.addEventListener("click", (e) =>{
@@ -26,11 +27,13 @@ signUpButton.addEventListener("click", (e) =>{
     .createUserWithEmailAndPassword(email.value, password.value)
     .then((userCredential) => {
         location.reload();
-        alert("user signed up successful");
+        alert("Your Account Has Successfully Being Created");
 
         //signed in
         var user = userCredential.user;
         console.log("user, user.email");
+        window.location = "index.html";
+
     })
 
     .catch((error)=>{
@@ -56,7 +59,7 @@ signInButton.addEventListener("click", (e) =>{
     .then((userCredential) => {
         var user = userCredential.user;
         console.log("user", user.email);
-        window.location = "home.html";
+        window.location = "index.html";
     })
 
     .catch((error) => {

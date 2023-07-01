@@ -13,9 +13,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgb(36,9,50);
-    background: linear-gradient(40deg, rgba(36,9,50,1) 0%, rgba(76,26,75,1) 50%, rgba(34,9,48,1) 100%);
+    /* background: rgb(36,9,50); */
+    /* background: linear-gradient(40deg, rgba(36,9,50,1) 0%, rgba(76,26,75,1) 50%, rgba(34,9,48,1) 100%); */
     column-gap: 30px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-image: url(./assets/Fashion\ Men\ Shoes\ British\ Style\ Soft\ Bottom\ Casual\ Pu\ Leather\ Waterproof\ Comfortable\ Business\ \ Formalmen\ Lace-Up\ Shoes\ -\ Black\ _\ 41.jfif);
 }
 
 .form{
@@ -172,11 +176,6 @@ a.google span{
     color: #232836;
 }
 
-/* @media screen and (max-width:400px) {
-    .form{
-        margin: 20px 10px;
-    }
-} */
 
 
 
