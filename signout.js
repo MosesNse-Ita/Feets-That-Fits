@@ -8,32 +8,32 @@ const firebaseConfig = {
   appId: "1:589241135130:web:6070c28a0b18ac399761a3"
 };
 
-// Initialize Firebase
+//Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
 
-  auth.onAuthStateChanged(function (user){
-    if (user){
-        var email = user.email;
-        var user = document.getElementById("user");
-        var text = document.createTextNode(email);
-        user.appendChild(text);
-        console.log(user);
+auth.onAuthStateChanged(function (user){
+  if (user){
+      var email = user.email;
+      var user = document.getElementById("user");
+      var text = document.createTextNode(email);
+      user.appendChild(text);
+      console.log(user);
 
-        //is signed in
-    } else {
-        alert("user not authenticated, kindly login or signup");
-        window.location = "index.html";
-    }
-  });
+      //is signed in
+  } else {
+      alert("user not authenticated, kindly login or signup");
+      window.location = "main.html";
+  }
+});
 
-  //logout function
+//logout function
 
-  let signOutButton = document.getElementById("signout");
-  signOutButton.addEventListener("click", (e) => {
-    e.preventDefault();
-    console.log("logout clicked");
-    auth.signOut();
-    alert("Signed out");
-    window.location = "./main.html";
-  })
+let signOutButton = document.getElementById("signout");
+signOutButton.addEventListener("click", (e) => {
+  e.preventDefault();
+  console.log("logout clicked");
+  auth.signOut();
+  alert("Signed out");
+  window.location = "./main.html";
+})

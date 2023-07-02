@@ -91,10 +91,12 @@ img {
 .bd-grid {
   /* max-width: 1024px; */
   display: grid;
-  /* grid-template-columns: 100%; */
+  grid-template-columns: 100%;
   /* column-gap: 2rem; */
   width: calc(100% - 2rem);
   margin: auto;
+  /* padding: 0px 20px 0 50px; */
+
 }
 
 .l-header {
@@ -102,24 +104,46 @@ img {
   position: fixed;
   top: 0;
   left: 0;
+  /* display: flex; */
   z-index: var(--z-fixed);
   height: 12vh;
   background-color: #8A8A8A;
-  padding: 0px 5px 0 5px;
+  /* padding: 0px 5px 0 5px; */
 }
 
 
 /*===== NAV =====*/
 .nav {
-  /* height: var(--header-height); */
+  height: var(--header-height);
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   width: 100%;
 }
 
 .nav__link{
     font-size: 28px;
+    font-weight: 500;
+}
+
+/* Logout and sign in profile */
+.profile{
+  font-size: 25px;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.log__out{
+  width: 6rem;
+  height: 1.9rem;
+  font-size: 25px;
+  font-weight: 500;
+  background-color: rgb(46, 8, 46);
+  color: #FFF;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  cursor: pointer;
 }
 
 .nav__item {
@@ -153,9 +177,9 @@ img {
 }
 
 /* Active link */
-.active {
+/* .active {
   position: relative;
-}
+} */
 
 /*Change color header*/
 .scroll-header {
@@ -167,13 +191,13 @@ img {
 /* Sections */
 
 .bghome{
-    background-image: url(./assets/patina\ leather\ on\ feet.png);
+    background-image: url(./assets/Ambrogio\ Men\'s\ Handmade\ Custom\ Made\ Shoes\ Cognac\ Patina\ Leather\ Whole-Cut\ Plain\ Oxfords\ \(AMB1156\)\ -\ CAMEL\ _\ CUSTOM.jfif);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     height: 100vh;
-    text-align:justify;
-    padding: 200px 0 0px 50px;
+    /* text-align:justify; */
+    padding: 200px 0 0px 65px;
 }
 
 .intro{
@@ -239,11 +263,11 @@ color: #FFF;
   border-radius: 10px;
 }
 
-.loafer__img1{
+/* .loafer__img1{
   width: 230px;
   position: absolute;
   border-radius: 10px;
-}
+} */
 
 .loafers-card{
   display: flex;
@@ -348,7 +372,7 @@ color: #FFF;
     }
 
     .l-header {
-      /* padding: 0px 20px 0 35px; */
+      padding: 0px 0px 0 0px;
 
     }
         
@@ -357,16 +381,17 @@ color: #FFF;
       }
     
       .nav__menu{
-        margin-left: auto;
+        /* margin-left: auto; */
       }
     
       .nav__list{
         display: flex;
         list-style: none;
+        gap: 2rem;
       }
     
       .nav__item{
-        margin-left: var(--mb-6);
+        /* margin-left: var(--mb-6); */
         margin-bottom: 0;
       }
     
@@ -377,14 +402,14 @@ color: #FFF;
 
       .nav__logo {
         font-weight: var(--font-bold);
-        font-size: 40px;
+        font-size: 30px;
         color: #000;
         font-family: var(--logo-font);
-        letter-spacing: .5rem;
+        letter-spacing: .1rem;
       }
       
       .logospan{
-          font-size: 28px;
+          font-size: 26px;
           color: chocolate;
           font-family: var(--body-font);
       }
@@ -403,16 +428,16 @@ color: #FFF;
   }
 
   .intro{
-    font-size: 20px;
-    font-weight: 500;
-    color: #000;
+    font-size: 28px;
+    font-weight: 600;
+    color: rgb(46, 8, 46);
     font-family: var(--body-font);
   }
   
   .introp{
-    font-size: 14px;
-    color: #fff;
-    font-weight: 400;
+    font-size: 18px;
+    color: #000;
+    font-weight: 500;
     font-family: var(--logo-font);
   }
 
