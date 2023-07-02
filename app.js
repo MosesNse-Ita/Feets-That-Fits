@@ -59,7 +59,7 @@
          var user = userCredential.user;
          console.log("user", user.email);
          window.location = "index.html";
-         alert("Log In successful");
+         alert("Logged In successful");
      })
  
      .catch((error) => {
