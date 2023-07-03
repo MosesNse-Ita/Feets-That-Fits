@@ -31,7 +31,7 @@
          //signed in
          var user = userCredential.user;
          console.log("user, user.email");
-         window.location = "index.html";
+         window.location = "home.html";
 
      })
  
@@ -58,7 +58,7 @@
      .then((userCredential) => {
          var user = userCredential.user;
          console.log("user", user.email);
-         window.location = "index.html";
+         window.location = "home.html";
          alert("Logged In successful");
      })
  

@@ -23,7 +23,7 @@ auth.onAuthStateChanged(function (user){
       //is signed in
   } else {
       alert("user not authenticated, kindly login or signup");
-      window.location = "main.html";
+      window.location = "index.html";
   }
 });
 
@@ -35,5 +35,5 @@ signOutButton.addEventListener("click", (e) => {
   console.log("logout clicked");
   auth.signOut();
   alert("Signed out");
-  window.location = "./main.html";
+  window.location = "./index.html";
 })
