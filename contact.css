@@ -1,7 +1,7 @@
 .body {
     min-height: 110vh;
     width: 100%;
-    background: #8a8a8a;
+    background: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -74,7 +74,7 @@
   .content .left-side .details .text-one,
   .content .left-side .details .text-two{
     font-size: 14px;
-    color: #a9a9b2;
+    color: black;
   }
   .container .content .right-side {
     width: 75%;
@@ -106,9 +106,9 @@
       width: 100%;
       border: none;
       font-size: 16px;
-      background-color: antiquewhite;
+      background-color: #d4d4d4;
       border-radius: 6px;
-      padding: 0 15px;
+      padding: 10px 15px;
       resize: none;
   }
   .right-side .message-box{
