@@ -54,7 +54,7 @@ function quantityChanged(event) {
        input.value = 1;
     }
     updatetotal();
-}7
+}
 //Add TO Cart
 function addCartClicked(event) {
    var button = event.target;
