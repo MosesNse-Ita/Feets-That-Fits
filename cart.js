@@ -1,19 +1,19 @@
 // cart 
-let cartIcon = document.querySelector('#cart-icon')
-let cart = document.querySelector('.cart')
-let closeCart = document.querySelector('#close-cart')
+let cartIcon = document.querySelector("#cart-icon");
+let cart = document.querySelector(".cart");
+let closeCart = document.querySelector("#close-cart");
 //Open Cart
 cartIcon.onclick = () => {
     cart.classList.add("active");
 };
 //Close Cart
 closeCart.onclick = () => {
-    cart.classList.remove("active")
+    cart.classList.remove("active");
 };
 
  //Cart Working Js
- if (document.readyState == 'loading'){
-    document.addEventListener('DOMContentLoaded',ready);
+ if (document.readyState == "loading") {
+    document.addEventListener("DOMContentLoaded", ready);
  } else {
     ready();
  }
@@ -23,21 +23,21 @@ closeCart.onclick = () => {
     //Remove Items From Cart
     var removeCartButtons = document.getElementsByClassName("cart-remove");
     console.log(removeCartButtons);
-    for (var i = 0; i <removeCartButtons.length; i++) {
+    for (var i = 0; i < removeCartButtons.length; i++) {
         var button = removeCartButtons[i];
        button.addEventListener("click", removeCartItem);
     }
     //Quantity Changes
-    var quantityInputs = document.getElementsByClassName('cart-quantity') 
+    var quantityInputs = document.getElementsByClassName("cart-quantity");   
     for (var i = 0; i < quantityInputs.length; i++) {
         var input = quantityInputs[i];
         input.addEventListener("change", quantityChanged);
     }
     //Add To Cart
-    var addCart = document.getElementsByClassName("add-cart")
+    var addCart = document.getElementsByClassName("add-cart");
     for (var i = 0; i < addCart.length; i++) {
       var button = addCart[i];
-      button.addEventListener("clicked", addCartClicked);
+      button.addEventListener("click", addCartClicked);
     }
  }
 
@@ -66,7 +66,7 @@ function addCartClicked(event) {
 
 
  //Update total
- function updatetotal(){
+ function updatetotal() {
     var cartContent = document.getElementsByClassName("cart-content")[0];
     var cartBoxes = cartContent.getElementsByClassName("cart-box");
     var total = 0;
