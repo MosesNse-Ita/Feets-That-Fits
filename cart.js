@@ -39,6 +39,19 @@ closeCart.onclick = () => {
       var button = addCart[i];
       button.addEventListener("click", addCartClicked);
     }
+    //Buy Button works
+    document
+    .getElementsByClassName("btn-buy")[0]
+    .addEventListener("click", buyButtonClicked);
+ }
+ //Buy Button
+ function buyButtonClicked() {
+   alert("Your Order is placed");
+   var cartContent = document.getElementsByClassName("cart-content")[0];
+   while (cartContent.hasChildNodes()) {
+      cartContent.removeChild(cartContent.firstChild);
+   }
+   updatetotal();
  }
 
  //Remove Items From Cart
@@ -60,9 +73,37 @@ function addCartClicked(event) {
    var button = event.target;
    var shopProducts = button.parentElement;
    var title = shopProducts.getElementsByClassName("loafers__name")[0].innerText;
-   console.log(title);
+   var price = shopProducts.getElementsByClassName("price")[0].innerText;
+   var loaferImg = shopProducts.getElementsByClassName("loafer__img")[0].src;
+   // console.log(title, price, loaferImg);
+   addProductToCart(title, price, loaferImg);
+   updatetotal();
 }
-
+function addProductToCart(title, price, loaferImg) {
+   var cartShopBox = document.createElement("div");
+   cartShopBox.classList.add("cart-box");
+   var cartItems = document.getElementsByClassName("cart-content")[0];
+   var cartItemsNames = cartItems.getElementsByClassName("cart-product-title");
+   for (var i = 0; i < cartItemsNames.length; i++) {
+      alert("You Have Already Added This Item to cart");
+      return;
+   }
+}
+var cartBoxContent = `
+                        <img src="#{loaferImg}" alt="" class="cart-img">
+                        <div class="detail-box">
+                        <div class="cart-product-title">#{title}</div>
+                        <div class="cart-price">#{price}</div>
+                        <input type="number" value="1" class="cart-quantity">
+                     </div>
+                     <!-- Remove From Cart -->
+                     <i class='bx bxs-trash-alt cart-remove'></i>`;
+cartShopBox.innerHTML = cartBoxContent;
+cartItems.append(cartShopBox);
+cartShopBox.getElementsByClassName("cart-remove")[0]
+.addEventListener("click", removeCartItem);
+cartShopBox.getElementsByClassName("cart-quantity")[0]
+.addEventListener("change", quantityChanged);
 
 
  //Update total
@@ -77,9 +118,9 @@ function addCartClicked(event) {
         var price = parseFloat(priceElement.innerText.replace("#", ""));
         var quantity = quantityElement.value;
         total = total + (price * quantity);
+      }
             //if price contain some kobo value
             total = Math.round(total * 100) / 100;
 
         document.getElementsByClassName("total-price")[0].innerText = "#" + total;
-    }
  }
